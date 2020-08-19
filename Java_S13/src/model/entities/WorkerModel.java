@@ -18,6 +18,7 @@ public class WorkerModel
     /* Value Types */
     private String name;
     private Double baseSalary;
+    private Double income;
     
     /* Enums */
     private WorkerLevel level;
@@ -43,6 +44,19 @@ public class WorkerModel
     }
     
     /* WorkerModel Methods */
+    public Double income(int month)
+    {   
+        income = 0.00;
+        this.hourContract.forEach(contract -> {
+            if(contract.getDate().getMonth() + 1 == month)
+            {
+                this.income += contract.totalValue();
+            }
+        });
+        
+        return income;
+    }
+    
     public void addHourContract(HourContractModel hourContractModel)
     {
         this.hourContract.add(hourContractModel);
@@ -115,8 +129,4 @@ public class WorkerModel
     {
         this.department = department;
     }
-    
-    
-    
-    
 }
