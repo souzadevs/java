@@ -51,23 +51,13 @@ public class WorkerModel
         for(HourContractModel contract : this.hourContract)
         {
             calendar.setTime(contract.getDate());
-            System.out.println("Dbug - Mes: " + month);
-            System.out.println("Dbug - Ano: " + year);
-            System.out.println("Dbug - Mes Calendario: " + calendar.get(Calendar.MONTH));
-            System.out.println("Dbug - Ano Calendario: " + calendar.get(Calendar.YEAR));
+            
             if(calendar.get(Calendar.MONTH) + 1 == month && calendar.get(Calendar.YEAR) == year)
             {
                 System.out.println("Aqui");
                 income += contract.totalValue();
             }
         }
-            
-//        this.hourContract.forEach(contract -> {
-//            if()
-//            {
-//                this.income += contract.totalValue();
-//            }
-//        });
         
         return income;
     }

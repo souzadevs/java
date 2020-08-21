@@ -60,7 +60,7 @@ public class Java_S13
             System.out.println("======= ~~ =======");
         }
         
-        System.out.println("Em qual mês deseja visualizar os contratos (1 à 12)?");
+        System.out.println("Em qual mês deseja visualizar os contratos (MM/YYYY)?");
         
         String mesAno = new Scanner(System.in).nextLine();
         String[] mesAnoArray = new String[2];
@@ -69,7 +69,6 @@ public class Java_S13
         System.out.println("Nome: " + workerModel.getName());
         System.out.println("Departamento: " + workerModel.getDepartment().getName());
         System.out.println("Renda: " + workerModel.income(Integer.parseInt(mesAnoArray[0]), Integer.parseInt(mesAnoArray[1])));
-        
-        
+            
     }
 }

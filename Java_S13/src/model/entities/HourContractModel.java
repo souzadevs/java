@@ -69,6 +69,4 @@ public class HourContractModel
     {
         return "HourContractModel{" + "date=" + date + ", valuePerHours=" + valuePerHours + ", hours=" + hours + '}';
     }
-    
-    
 }
