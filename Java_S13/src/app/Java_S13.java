@@ -5,10 +5,9 @@
  */
 package app;
 
-import java.awt.image.SampleModel;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import model.entities.DepartmentModel;
@@ -63,11 +62,13 @@ public class Java_S13
         
         System.out.println("Em qual mês deseja visualizar os contratos (1 à 12)?");
         
-        int mes = Integer.parseInt(new Scanner(System.in).nextLine());
-        
+        String mesAno = new Scanner(System.in).nextLine();
+        String[] mesAnoArray = new String[2];
+        mesAnoArray = mesAno.split("/");
+ 
         System.out.println("Nome: " + workerModel.getName());
         System.out.println("Departamento: " + workerModel.getDepartment().getName());
-        System.out.println("Renda: " + workerModel.income(mes));
+        System.out.println("Renda: " + workerModel.income(Integer.parseInt(mesAnoArray[0]), Integer.parseInt(mesAnoArray[1])));
         
         
     }

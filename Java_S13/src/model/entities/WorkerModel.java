@@ -6,6 +6,7 @@
 package model.entities;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import model.enums.WorkerLevel;
 
@@ -18,7 +19,6 @@ public class WorkerModel
     /* Value Types */
     private String name;
     private Double baseSalary;
-    private Double income;
     
     /* Enums */
     private WorkerLevel level;
@@ -44,15 +44,30 @@ public class WorkerModel
     }
     
     /* WorkerModel Methods */
-    public Double income(int month)
+    public Double income(int month, int year)
     {   
-        income = 0.00;
-        this.hourContract.forEach(contract -> {
-            if(contract.getDate().getMonth() + 1 == month)
+        Double income = this.getBaseSalary();
+        Calendar calendar = Calendar.getInstance();
+        for(HourContractModel contract : this.hourContract)
+        {
+            calendar.setTime(contract.getDate());
+            System.out.println("Dbug - Mes: " + month);
+            System.out.println("Dbug - Ano: " + year);
+            System.out.println("Dbug - Mes Calendario: " + calendar.get(Calendar.MONTH));
+            System.out.println("Dbug - Ano Calendario: " + calendar.get(Calendar.YEAR));
+            if(calendar.get(Calendar.MONTH) + 1 == month && calendar.get(Calendar.YEAR) == year)
             {
-                this.income += contract.totalValue();
+                System.out.println("Aqui");
+                income += contract.totalValue();
             }
-        });
+        }
+            
+//        this.hourContract.forEach(contract -> {
+//            if()
+//            {
+//                this.income += contract.totalValue();
+//            }
+//        });
         
         return income;
     }
