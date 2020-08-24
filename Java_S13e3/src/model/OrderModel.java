@@ -16,6 +16,7 @@ public class OrderModel
 {
     private Date moment;
     private OrderStatusEnum status;
+    private ClientModel client;
     
     private ArrayList<OrderItemModel> orderItemList;
 
@@ -24,11 +25,10 @@ public class OrderModel
         this.moment = new Date();
     }
     
-    public OrderModel(OrderStatusEnum status, ArrayList<OrderItemModel> orderItemList)
+    public OrderModel(OrderStatusEnum status)
     {
         this.moment = new Date();
-        this.status = status;
-        this.orderItemList = orderItemList;
+        this.status = status; 
     }
     
     public Double total()

@@ -9,7 +9,7 @@ package model;
  *
  * @author Bruno Araujo
  */
-enum OrderStatusEnum 
+public enum OrderStatusEnum 
 {
     PEDDING_PAYMENT,
     PROCESSED,

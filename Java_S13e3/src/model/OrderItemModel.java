@@ -16,6 +16,13 @@ public class OrderItemModel
     
     private ProductModel product;
     
+    public OrderItemModel(ProductModel product, int quantity) 
+    {
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+    }
+    
     public double subTotal()
     {
         return this.quantity * this.price;
