@@ -16,18 +16,21 @@ public class OrderModel
 {
     private Date moment;
     private OrderStatusEnum status;
+    
     private ClientModel client;
     
-    private ArrayList<OrderItemModel> orderItemList;
+    private ArrayList<OrderItemModel> orderItemList = new ArrayList<>();
 
     public OrderModel()
     {
         this.moment = new Date();
+        this.client = new ClientModel();
     }
     
     public OrderModel(OrderStatusEnum status)
     {
         this.moment = new Date();
+        this.client = new ClientModel();
         this.status = status; 
     }
     
@@ -55,6 +58,11 @@ public class OrderModel
     {
         this.orderItemList.clear();
     }
+    
+    public ArrayList<OrderItemModel> getOrderItemList()
+    {
+        return this.orderItemList;
+    }
 
     public Date getMoment()
     {
@@ -74,6 +82,16 @@ public class OrderModel
     public void setStatus(OrderStatusEnum status)
     {
         this.status = status;
+    }
+    
+    public ClientModel getClient()
+    {
+        return client;
+    }
+
+    public void setClient(ClientModel client)
+    {
+        this.client = client;
     }
 
     @Override

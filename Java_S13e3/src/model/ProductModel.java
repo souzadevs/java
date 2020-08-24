@@ -44,6 +44,4 @@ public class ProductModel
     {
         this.price = price;
     }
-    
-    
 }

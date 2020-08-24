@@ -12,7 +12,7 @@ package model;
 public enum OrderStatusEnum 
 {
     PEDDING_PAYMENT,
-    PROCESSED,
+    PROCESSING,
     SHIPPED,
     DELIVERED;
 }

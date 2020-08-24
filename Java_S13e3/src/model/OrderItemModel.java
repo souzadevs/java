@@ -25,7 +25,7 @@ public class OrderItemModel
     
     public double subTotal()
     {
-        return this.quantity * this.price;
+        return this.quantity * this.product.getPrice();
     }
 
     public int getQuantity()
@@ -57,6 +57,4 @@ public class OrderItemModel
     {
         this.product = product;
     }
-    
-    
 }
