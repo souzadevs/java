@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Date;
 
